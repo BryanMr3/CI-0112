@@ -1,1 +1,1 @@
-# CI-0112
+# Este es un repositorio sobre el curso de programación I
