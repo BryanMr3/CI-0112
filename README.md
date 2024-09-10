@@ -1,1 +1,1 @@
-# Este es un repositorio sobre el curso de programación I
+# Este es un repositorio del curso de programación I
