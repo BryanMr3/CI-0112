@@ -27,7 +27,7 @@ public class Robot
     }
 
     //getters
-    public String getNombre(){
+    public String getnombre(){
         return nombre;
     }
 
@@ -46,15 +46,7 @@ public class Robot
     }
 
     public boolean estaVivo(){
-        boolean vivo = true;
-        
-        if(puntosVida > 0){
-            vivo = true;
-        }else{
-            vivo = false;
-        }
-        
-        return vivo;
+        return puntosVida > 0;
     }
 
     
