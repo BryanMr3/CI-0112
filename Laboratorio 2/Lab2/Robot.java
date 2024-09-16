@@ -14,35 +14,35 @@ public class Robot
     }
 
     //setters
-    public void setnombre(String nombre){
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
 
-    public void setpuntosVida(int puntosVida){
+    public void setPuntosVida(int puntosVida){
         this.puntosVida = puntosVida;
     }
 
-    public void setataque(int ataque){
+    public void setAtaque(int ataque){
         this.ataque = ataque;
     }
 
     //getters
-    public String getnombre(){
-        return nombre;
+    public String getNombre(){
+        return this.nombre;
     }
 
-    public int getpuntosVida(){
-        return puntosVida;
+    public int getPuntosVida(){
+        return this.puntosVida;
     }
 
-    public int getataque(){
-        return ataque;
+    public int getAtaque(){
+        return this.ataque;
     }
 
     //Metodos
     public void atacar(Robot otroRobot){
         int daño = this.ataque;
-        otroRobot.puntosVida -= ataque;
+        otroRobot.setPuntosVida(otroRobot.getPuntosVida() - daño);
     }
 
     public boolean estaVivo(){
