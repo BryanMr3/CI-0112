@@ -30,7 +30,7 @@ public class Vector
 
         //generar un nuevo número y almacenarlo en cada posicion del array(cada iteracion)
         for(int i = 0; i < vector.length; i++){
-            int nuevoNum = randomGen.nextInt(101);
+            int nuevoNum = randomGen.nextInt(6);
             vector[i] = nuevoNum;
         }
 
@@ -41,18 +41,76 @@ public class Vector
 
         for(int i = 0; i < vector.length; i++){
             int posicionMenor = i;
-            int valorMenor = this.vector[i];
+            int valorMenor = vector[i];
 
-            for (int j = i +1; i < vector.length; j++){
-                if(valorMenor < vector[j]){ 
-                    valorMenor = this.vector[j];
-                    posicionMenor = j; //donde está y el valor
+            for (int j = i + 1; j < vector.length; j++){
+
+                if(valorMenor > vector[j]){ 
+
+                    posicionMenor = j;
+                    valorMenor = vector[j];//donde está y el valor
                 }
-                int aux = valorMenor;// modificar el menor en posicion i que verifica
-                
+
+                int aux = vector[i];  
+                vector[i] = vector[posicionMenor];
+                vector[posicionMenor] = aux;                
             }
 
-                        
         }
     }
-}    
+
+    public int busquedaSecuencial(int numeroEncontrar){
+        int indice = 0;
+
+        for(int i=0; i < vector.length; i++){
+            if(vector[i]== numeroEncontrar){
+                indice = i; 
+                System.out.println("El número está en el índice: " + indice);
+            }else{
+                System.out.println("El número no se encuentra en el índice: " + i);
+            }
+
+        }
+
+        return indice;
+    }
+
+    public void paresImpares(){
+        int impares = 0;
+        int pares = 0;
+
+        for(int i = 0; i < vector.length; i ++){
+            if(vector[i] % 2 == 0){
+                pares += 1;
+            }else{
+                impares += 1; 
+            }
+        }
+
+        System.out.println("La cantidad de números pares es: " + pares);
+        System.out.println("La cantidad de números impares es: " + impares);
+
+    }
+
+    public void restaMayorMenor(){
+        int numMayor = vector[0];
+        int numMenor = vector[0];
+        
+        for(int i=0; i < vector.length; i++){
+
+            if(vector[i] > numMayor){
+                numMayor = vector[i];
+            }
+            
+            if(vector[i] < numMenor){
+                numMenor = vector[i]; 
+            }
+        
+        }
+
+        int resta = numMayor - numMenor;
+        System.out.println("La resta entre el número mayor: "+ numMayor + " y el número menor: " +
+            numMenor + " es: " + resta);
+
+    }
+}

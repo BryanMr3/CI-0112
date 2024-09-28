@@ -3,6 +3,7 @@
 public class Main
 {
     public static void main(String args[]) {
+   
         //declarar un array con valores
         int[] vectorNativo = {2,3,5,2};
         
@@ -15,6 +16,9 @@ public class Main
         vectorObj.impValores();//este imprime los nuevos valores del array 
         vectorObj.ordenarNum();
         vectorObj.impValores();
+        vectorObj.busquedaSecuencial(2);
+        vectorObj.paresImpares();
+        vectorObj.restaMayorMenor();
     }
 
     
