@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=CuatroEnLinea
+comment1.params=tablero
+comment1.target=void\ setTablero(int[][])
+comment2.params=jugadorActual
+comment2.target=void\ setJugadorActual(int)
+comment3.params=
+comment3.target=int[][]\ getTablero()
+comment4.params=
+comment4.target=int\ getJugadorActual()
+comment5.params=
+comment5.target=CuatroEnLinea()
+comment6.params=
+comment6.target=void\ iniciarJuego()
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8
