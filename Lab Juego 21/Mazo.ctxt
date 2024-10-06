@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Mazo
+comment1.params=mazo
+comment1.target=void\ setMazo(Carta[])
+comment2.params=
+comment2.target=Carta[]\ getMazo()
+comment3.params=mazo
+comment3.target=Mazo(Carta[])
+comment4.params=
+comment4.target=void\ crearMazo()
+numComments=5
