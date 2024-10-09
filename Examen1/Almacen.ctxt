@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Almacen
+comment1.params=
+comment1.target=Almacen()
+comment2.params=tablas
+comment2.target=void\ setTablas(Tabla[])
+comment3.params=indTabla
+comment3.target=void\ setIndTabla(int)
+comment4.params=
+comment4.target=Tabla[]\ getTabla()
+comment5.params=
+comment5.target=int\ getIndTabla()
+comment6.params=
+comment6.target=void\ tablaEstandar()
+comment7.params=
+comment7.target=void\ agregarTablas()
+comment8.params=
+comment8.target=void\ mostrarTablas()
+numComments=9
