@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=CuatroEnLinea
-comment0.text=Esta\ clase\ contendr\u00E1\ los\ metodos\ y\ atributos\ que\ dan\ la\ estructura\ del\ juego\ Cuatro\ En\ Linea.\ Los\ metodos\ creados\ permiten\ crear\ un\r\ntablero,\ realizar\ y\ mostrar\ movimientos,\ verificar\ estados\ del\ juego(gane,\ perdida,\ empate)\ para\ determinar\ al\ ganador.\ \r\n\ \r\n
 comment1.params=tablero\ jugadorActual
 comment1.target=CuatroEnLinea(int[][],\ int)
 comment10.params=
-comment10.target=void\ mostarTablero()
+comment10.target=void\ mostrarTablero()
+comment10.text=Este\ metodo\ permite\ que\ se\ imprima\ el\ tablero\ \r\n\ \r\n
+comment11.params=args
+comment11.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=CuatroEnLinea()
 comment3.params=tablero
@@ -24,4 +26,4 @@ comment8.text=Metodo\ de\ tipo\ booleano,recibe\ un\ parametro\ de\ tipo\ entero
 comment9.params=
 comment9.target=void\ cambiarJugador()
 comment9.text=metodo\ sin\ retorno\ y\ parametros,\ se\ espera\ alternar\ al\ jugador\ actual,\ cuando\ se\ llame\ al\ metodo\ se\ espera\ cambie\ de\ jugador,\ por\ medio\r\n\ del\ condicional\ que,\ en\ if\ verifica\ si\ el\ jugador\ actual\ es\ 1,\ lo\ cambia\ a\ 2\ y\ viceversa\ mediante\ el\ else\ \r\n
-numComments=11
+numComments=12
