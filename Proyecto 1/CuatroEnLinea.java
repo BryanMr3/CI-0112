@@ -14,12 +14,12 @@ public class CuatroEnLinea
         this.tablero = tablero;
         this.jugadorActual = jugadorActual;
     }
-    
+
     //metodo constructos y sin parametros. llama al metodo iniciarJuego, que inicializaba el tablero y establecia el jugador actual
     public CuatroEnLinea() {
         iniciarJuego();
     }
-    
+
     //setters
     public void setTablero (int[][] tablero){
         this.tablero = tablero;
@@ -45,8 +45,8 @@ public class CuatroEnLinea
         tablero = new int[6][7]; //inicializa el tablero 6 filas, 7 columnas 
 
         //bucle para asignar valores iniciales en cada posicion del tablero
-        for(int i = 0; i < tablero.length; i++){
-            for(int j = 0; j < tablero[i].length ; j++){
+        for(int i = 0; i < this.tablero.length; i++){
+            for(int j = 0; j < this.tablero[i].length ; j++){
                 tablero[i][j] = 0; //representa los espacios disponibles para ficha, con el valor cero
             }
         }
@@ -63,9 +63,8 @@ public class CuatroEnLinea
 
         if(columna >= 0 && columna < 7){
             for(int i = 5; i >= 0; i--){ //
-                if(tablero[i][columna]==0){
+                if(this.tablero[i][columna]==0){
                     tablero[i][columna] = this.jugadorActual;
-                    cambiarJugador();
                     return true; //Se ejecuta el movimiento
                 }
             }
@@ -81,9 +80,9 @@ public class CuatroEnLinea
      */
     public void mostrarTablero(){
         System.out.println("Tablero actual: ");
-        for(int i=0; i < tablero.length; i++){
+        for(int i=0; i < this.tablero.length; i++){
             System.out.print("| "); //separar casillas
-            for(int j=0; j < tablero[i].length;j++){
+            for(int j=0; j < this.tablero[i].length;j++){
                 System.out.print(tablero[i][j] + " | ");
 
             }
@@ -96,28 +95,78 @@ public class CuatroEnLinea
      * si se cumple alguno de los dos y retorna "true", si no, retorna "false" que indica que el juego deberia continuar.
      */
     public boolean esJuegoTerminado(){
-        
+
         if(esGanador() || esEmpate()== true){
             return true;
         }else{
             return false;
         }
+
+    }
     
+    /*Metodo booleano, verifica si hay un ganador. Evalua si alguno de los escenarios que representan que algun jugador ganó se cumple.
+     * Se manejan datos que contienen al jugador actual y el estado del tablero. mediante los bucles for, recorre el arreglo para verificar
+     * si alguna de las combinaciones de gane se cumplen. Se espera obtener un retorno "true" si hay cuatros posiciones consecutivas en alguna
+     * de las direcciones que contengan el movimiento del mismo jugador y "false"si no se cumple.
+     */
+    public boolean esGanador(){
+        int jugador = this.getJugadorActual(); //referencia al jugador actual
+        
+        //verificar si hay ganador ebn horizontal.. bucle for con "j", condicion se limita a 4 para asegurar verificar en 4 espacios consecutivos 
+        for(int i=0; i < this.tablero.length; i++){
+            for(int j=0; j < this.tablero.length-3;j++){
+                //verificacion horizontal.. evalua si en una fila(i) hay 4 columnas (j) con el mismo valor de forma consecutiva 
+                if(this.tablero[i][j]==jugador && this.tablero[i][j+1]==jugador && 
+                this.tablero[i][j+2] ==jugador && this.tablero[i][j+3]==jugador){
+
+                    return true; //representa una victoria
+
+                }
+
+            }
+        }
+        
+        //verificar si hay ganador en vertical.. bucle for con "i", condicion se limita a 3 para asegurar evaluar en 4 espacios
+        for(int i=0; i < this.tablero.length-3; i++){ 
+            for(int j=0; j < this.tablero.length;j++){
+                //verificacion vertical.. evalua sin en una columna(j) hay 4 filas (i) con el mismo valor de forma consecutiva.
+                if(this.tablero[i][j]==jugador && this.tablero[i+1][j]==jugador && 
+                this.tablero[i+2][j] ==jugador && this.tablero[i+3][j]==jugador){
+
+                    return true; // representa una victoria
+
+                }
+
+            }
+        }
+        
+        //verificar si hay ganador en diagonal de izquierda a derecha (\). columna y fila limitadas a 3 y 4, para evitar desbordamiento
+        for(int i=0; i < this.tablero.length-3; i++){
+            for(int j=0; j < this.tablero.length-3;j++){
+                //verificacion horizontal..
+                if(this.tablero[i][j]==jugador && this.tablero[i+1][j+1]==jugador && 
+                this.tablero[i+2][j+2] ==jugador && this.tablero[i+3][j+3]==jugador){
+                    return true;
+                }
+
+            }
+        }
+        
+        //falta agregar el bucle para la diagonal / y hacer pruebas para todas las combinaciones *-*.. 
+        
+        return false;
     }
 
-    public boolean esGanador(){
-        return true;
-    }
-    
     /*Verifica si el juego es empate. Con dos bucles for recorre cada posicion del arreglo para
      * revisar que se cumple la condicion del if de que existan espacios sin uso para ficha.
      * Retorna false, para indicar que no hay empate al tener celdas disponibles(valor cero) y
      * true para indicar que cada columna y fila está con valor diferente de cero(1 o 2)
      */
     public boolean esEmpate(){
-        for(int i=0; i<tablero.length; i++){
-            for(int j=0; j<tablero[i].length;j++){
-                if(tablero[i][j] == 0){
+
+        for(int i=0; i < this.tablero.length; i++){
+            for(int j=0; j < this.tablero[i].length;j++){
+                if(this.tablero[i][j] == 0){
                     return false;    
                 }
             }
@@ -140,7 +189,6 @@ public class CuatroEnLinea
 
     public static void main(String[]args){
         //Esto es solo para probar los avances, pero más adelante se dedica una clase al flujo del juego
-        
         Scanner scanner = new Scanner(System.in);
         CuatroEnLinea juego = new CuatroEnLinea();
         int columna;
@@ -154,19 +202,29 @@ public class CuatroEnLinea
             columna = scanner.nextInt();
 
             if(juego.hacerMovimiento(columna)){
-                System.out.println("¡Movimiento realizado! \n" );
-                juego.mostrarTablero();
-            }else{
-                System.out.println("¡Movimiento inválido! \n");
-                juego.mostrarTablero();
+                //verificar si ha terminado el juego, llamando al metodo
+                if(juego.esJuegoTerminado()){
+                    juego.mostrarTablero();
+                    if(juego.esGanador()){
+                        System.out.println("El juego ha terminado, el ganador es el jugador: " + juego.getJugadorActual());
+                    }else{
+                        System.out.println("El juego ha terminado en empate");
+                    }
+                    break;
+                } 
+                juego.cambiarJugador(); 
             }
-            
-            if(juego.esEmpate()){
-                System.out.println("El juego ha terminado, es un empate");
-                break;
-            }
-            System.out.println();
-        }
 
+            else{
+                System.out.println("¡Movimiento inválido!. Intenta de nuevo \n");
+                
+                
+            }
+
+            
+            
+        }
+        scanner.close();
     }
+
 }
