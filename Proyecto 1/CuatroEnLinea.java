@@ -106,11 +106,23 @@ public class CuatroEnLinea
     }
 
     public boolean esGanador(){
-        
+        return true;
     }
-
+    
+    /*Verifica si el juego es empate. Con dos bucles for recorre cada posicion del arreglo para
+     * revisar que se cumple la condicion del if de que existan espacios sin uso para ficha.
+     * Retorna false, para indicar que no hay empate al tener celdas disponibles(valor cero) y
+     * true para indicar que cada columna y fila está con valor diferente de cero(1 o 2)
+     */
     public boolean esEmpate(){
-
+        for(int i=0; i<tablero.length; i++){
+            for(int j=0; j<tablero[i].length;j++){
+                if(tablero[i][j] == 0){
+                    return false;    
+                }
+            }
+        }
+        return true;
     }
 
     /*metodo sin retorno y parametros, se espera alternar al jugador actual, cuando se llame al metodo se espera cambie de jugador, por medio
@@ -142,11 +154,16 @@ public class CuatroEnLinea
             columna = scanner.nextInt();
 
             if(juego.hacerMovimiento(columna)){
-                System.out.println("¡Movimiento realizado!");
+                System.out.println("¡Movimiento realizado! \n" );
                 juego.mostrarTablero();
             }else{
-                System.out.println("¡Movimiento inválido!");
+                System.out.println("¡Movimiento inválido! \n");
                 juego.mostrarTablero();
+            }
+            
+            if(juego.esEmpate()){
+                System.out.println("El juego ha terminado, es un empate");
+                break;
             }
             System.out.println();
         }
