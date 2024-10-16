@@ -106,7 +106,7 @@ public class CuatroEnLinea
     
     /*Metodo booleano, verifica si hay un ganador. Evalua si alguno de los escenarios que representan que algun jugador ganó se cumple.
      * Se manejan datos que contienen al jugador actual y el estado del tablero. mediante los bucles for, recorre el arreglo para verificar
-     * si alguna de las combinaciones de gane se cumplen. Se espera obtener un retorno "true" si hay cuatros posiciones consecutivas en alguna
+     * si alguna de las combinaciones de gane se cumplen. Se espera obtener un retorno "true" si hay cuatro posiciones consecutivas en alguna
      * de las direcciones que contengan el movimiento del mismo jugador y "false"si no se cumple.
      */
     public boolean esGanador(){
@@ -129,7 +129,7 @@ public class CuatroEnLinea
         //verificar si hay ganador en vertical.. bucle for con "i", condicion se limita a 3 para asegurar evaluar en 4 espacios
         for(int i=0; i < this.tablero.length-3; i++){ 
             for(int j=0; j < this.tablero.length;j++){
-                //verificacion vertical.. evalua sin en una columna(j) hay 4 filas (i) con el mismo valor de forma consecutiva.
+                //verificacion vertical.. evalua si en una columna(j) hay 4 filas (i) con el mismo valor de forma consecutiva.
                 if(this.tablero[i][j]==jugador && this.tablero[i+1][j]==jugador && 
                 this.tablero[i+2][j] ==jugador && this.tablero[i+3][j]==jugador){
 
@@ -140,10 +140,13 @@ public class CuatroEnLinea
             }
         }
         
-        //verificar si hay ganador en diagonal de izquierda a derecha (\). columna y fila limitadas a 3 y 4, para evitar desbordamiento
+        /*verificar si hay ganador en diagonal de izquierda a derecha (\). 
+         *columna y fila limitadas a 3 y 4, para evitar desbordamiento*/
         for(int i=0; i < this.tablero.length-3; i++){
             for(int j=0; j < this.tablero.length-3;j++){
-                //verificacion horizontal..
+                /* logica para verificar si hay un mismo valor de jugador.
+                 * acceder a posiciones en diagonal de derecha a izquierda
+                */
                 if(this.tablero[i][j]==jugador && this.tablero[i+1][j+1]==jugador && 
                 this.tablero[i+2][j+2] ==jugador && this.tablero[i+3][j+3]==jugador){
                     return true;
@@ -152,7 +155,20 @@ public class CuatroEnLinea
             }
         }
         
-        //falta agregar el bucle para la diagonal / y hacer pruebas para todas las combinaciones *-*.. 
+        /*verificar si hay ganador en diagonal de izquierda a derecha(/).
+         *condición de ambos bucles limitadas a 3 y 4, para evitar desbordamiento de índice.
+        */
+        for(int i=3; i < this.tablero.length; i++){
+            for(int j=0; j < this.tablero.length-3;j++){
+                /* logica para verificar si hay un mismo valor de jugador en 4 posiciones consecutivas.
+                 * accede a posiciones en diagonal de izquierda a derecha */
+                if(this.tablero[i][j]==jugador && this.tablero[i-1][j+1]==jugador && 
+                this.tablero[i-2][j+2] ==jugador && this.tablero[i-3][j+3]==jugador){
+                    return true;
+                }
+
+            }
+        }
         
         return false;
     }
@@ -217,11 +233,7 @@ public class CuatroEnLinea
 
             else{
                 System.out.println("¡Movimiento inválido!. Intenta de nuevo \n");
-                
-                
             }
-
-            
             
         }
         scanner.close();
