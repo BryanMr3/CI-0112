@@ -1,4 +1,4 @@
-package proyJimena;
+ 
 
 import java.util.Scanner;
 

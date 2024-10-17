@@ -1,4 +1,4 @@
-package proyJimena;
+ 
 
 public class TicTacToe {
     // Atributos
