@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=MainJuego
+comment0.text=Esta\ es\ la\ clase\ principal,\ inicializa\ los\ juegos.\r\n\ Crea\ una\ instancia\ de\ JuegoControlador\ y\ maneja\ el\ flujo\ principal\ de\ cada\ juego.\ Permite\ seleccionar\ un\ juego\ y\ comenzar\ a\ jugarlo.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
