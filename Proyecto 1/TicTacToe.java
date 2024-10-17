@@ -1,4 +1,4 @@
- 
+ import java.util.Scanner;
 
 public class TicTacToe {
     // Atributos
@@ -8,8 +8,6 @@ public class TicTacToe {
     // Constructor
     public TicTacToe() {
         iniciarJuego();
-        this.tablero = tablero;
-        this.jugadorActual = jugadorActual;
     }
     
     //getters y setters 
@@ -28,11 +26,12 @@ public class TicTacToe {
         jugadorActual = 'X'; // Comienza el jugador 'X'
     }
 
-    
+    //boolean para hacer que otros métodos sean más directos
     public boolean hacerMovimiento(int fila, int columna) {
+        //Verifica si se sale de los límites superiores e inferiores, también si el espacio seleccionado está vacío
         if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == '-') {
-            tablero[fila][columna] = jugadorActual;
-            return true;
+            tablero[fila][columna] = jugadorActual; //Si se cumple, se pone el símbolo del jugador actual en el espacio
+            return true; //Válido y se ejecutó correctamente
         } else {
             System.out.println("Movimiento inválido. Intente de nuevo.");
             return false;
@@ -58,6 +57,7 @@ public class TicTacToe {
     public boolean esGanador() {
         // Verificar filas y columnas
         for (int i = 0; i < 3; i++) {
+            // recorre todas las filas con las diiferentes opciones de columna y viveversa
             if ((tablero[i][0] == jugadorActual && tablero[i][1] == jugadorActual && tablero[i][2] == jugadorActual) ||
                 (tablero[0][i] == jugadorActual && tablero[1][i] == jugadorActual && tablero[2][i] == jugadorActual)) {
                 return true;
@@ -85,6 +85,7 @@ public class TicTacToe {
 
 
     public void cambiarJugador() {
+        //Verifica si jugador actual es x. Si si es (true) lo cambia a "0", si no es, lo cambia a "X"
         jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
     }
 }
