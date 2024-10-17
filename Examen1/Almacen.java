@@ -1,5 +1,6 @@
 
 
+
 public class Almacen
 {
     private Tabla[] tablas;
@@ -31,17 +32,30 @@ public class Almacen
     
     //metodo para crear la tabla estandar y asignarle la posicion
     private void tablaEstandar(){
-        tablas[indTabla] = new Tabla(4,6,24000);
+        tablas[indTabla] = new Tabla(4.0,6.0,24000.0);
         indTabla++;
     }
     
-    //metodo para agregar tablas en el array tablas
-    public void agregarTablas(){
+    //metodo para ordenar tablas
+    public void ordenarTablas(){
         
     }
     
+    
+    
+    //metodo para agregar tablas en el array tablas
+    public void agregarTablas(double ancho, double largo,double precio){
+        if(indTabla < tablas.length) {
+            for(int i = 0;i < indTabla;i++){
+                tablas[indTabla++] = new Tabla(ancho,largo, precio);
+                
+            }
+            
+        }
+    }
+    
     //mostrar info de las tablas
-    public void mostrarTablas(){
+    public void mostrarTablas(int ancho, int largo){
         for(int i = 0; i<indTabla;i++){
             tablas[i].mostrarInfo();
         }
