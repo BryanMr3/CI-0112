@@ -3,18 +3,18 @@
 public class TicTacToe {
     // Atributos
     private char[][] tablero;
-    private char jugadorActual;
+    private static char jugadorActual;
 
     // Constructor
     public TicTacToe() {
         iniciarJuego();
         this.tablero = tablero;
-        
+        this.jugadorActual = jugadorActual;
     }
     
     //getters y setters 
     public static char getJugadorActual(){
-        return juga
+        return jugadorActual; 
     }
 
     // Métodos
