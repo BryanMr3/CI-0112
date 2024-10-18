@@ -2,7 +2,7 @@
  *tablero, realizar y mostrar movimientos, verificar estados del juego(gane, perdida, empate).  
  */
 
-import java.util.Scanner;
+
 public class CuatroEnLinea
 {
     private int[][] tablero; //
