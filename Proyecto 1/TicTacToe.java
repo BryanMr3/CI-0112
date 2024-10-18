@@ -29,7 +29,7 @@ public class TicTacToe {
     //boolean para hacer que otros métodos sean más directos
     public boolean hacerMovimiento(int fila, int columna) {
         //Verifica si se sale de los límites superiores e inferiores, también si el espacio seleccionado está vacío
-        if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == '-') {
+        if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == '/') {
             tablero[fila][columna] = jugadorActual; //Si se cumple, se pone el símbolo del jugador actual en el espacio
             return true; //Válido y se ejecutó correctamente
         } else {
@@ -50,7 +50,7 @@ public class TicTacToe {
 
     
     public boolean esJuegoTerminado() {
-        return esGanador() || esEmpate();
+        return esGanador() || esEmpate(); //Si es alguno de estos dos, termina
     }
 
     
@@ -75,7 +75,7 @@ public class TicTacToe {
     public boolean esEmpate() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (tablero[i][j] == '-') {
+                if (tablero[i][j] == '/') {
                     return false; // Si hay una celda vacía, no hay empate
                 }
             }
