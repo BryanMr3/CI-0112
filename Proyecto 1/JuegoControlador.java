@@ -1,131 +1,146 @@
+import java.util.Scanner;
 
-/*Clase que controla la interacción con el usuario, selección de juego 
- *Permite al usuario escoger entre dos juegos CuatroEnLinea y TicTacToe
- */
-import java.util.Scanner; //importacion del Scanner
+public class JuegoControlador {
+    private Scanner entrada;
+    private CuatroEnLinea cuatroEnLinea;
+    private TicTacToe ticTacToe;
+    private int juegoActual;
 
-public class JuegoControlador
-{
-    private Scanner scanner; //atributo global para entrada de usuario
-    private CuatroEnLinea cuatroEnLinea; // instancia clase CuatroEnLineaa
-    private int juegoActual;//referencia a CuatroEnLinea y TicTacToe (1 o 2)
-
-    //metodo constructor sin parametros. Inicializa los atributos.
-    public JuegoControlador(){
-        this.cuatroEnLinea = new CuatroEnLinea();//crear instancia clase CuatroEnLinea
-        this.juegoActual = 0;//referencia a que no hay juego seleccionado
-        this.scanner = new Scanner(System.in);//inicializar scanner
+    // Constructor
+    public JuegoControlador() {
+        this.cuatroEnLinea = new CuatroEnLinea();
+        this.ticTacToe = new TicTacToe();
+        this.juegoActual = 0;
+        this.entrada = new Scanner(System.in);
     }
 
-    //setters
-    public void setCuatroEnLinea(CuatroEnLinea cuatroEnLinea){
+    // Setters y Getters
+    public void setCuatroEnLinea(CuatroEnLinea cuatroEnLinea) {
         this.cuatroEnLinea = cuatroEnLinea;
     }
-    
-    
-    //agregar set tictactoe
 
-    //getters
-    public CuatroEnLinea getCuatroEnLinea(){
+    public void setTicTacToe(TicTacToe ticTacToe) {
+        this.ticTacToe = ticTacToe;
+    }
+
+    public CuatroEnLinea getCuatroEnLinea() {
         return cuatroEnLinea;
     }
 
-    //agregar get tictactoe
+    public TicTacToe getTicTacToe() {
+        return ticTacToe;
+    }
 
-    /*Metodo sin retorno y parametros 
-     *Muestra las opciones de juego del menú principal en consola 
-     */
-    public void mostrarMenuPrincipal(){
-        System.out.println("============MENÚ PRINCIPAL============" );
+    // Método para mostrar el menú principal
+    public void mostrarMenuPrincipal() {
+        System.out.println("============MENÚ PRINCIPAL============");
         System.out.println("Selecciona un juego para continuar:");
-        System.out.println("1.Juego 4 En Línea  ");
-        System.out.println("2.Juego TicTacToe ");
+        System.out.println("1. Cuatro en línea");
+        System.out.println("2. TicTacToe");
     }
-    
-    /*Metodo sin retorno y parametros  
-     *Llama al metodo mostrarMenuPrincipal y procesa la entrada, para que el usuario seleccione un juego
-     *Segun la seleccion del juego, se asigna el valor a la variable que referencia a alguno de los dos juegos.
-     *Si no selecciona un juego del menu, mostrará el mensaje del condicional "else" y reinicia la solicitud del juego
-     */
-    public void seleccionarJuego(){
-        mostrarMenuPrincipal(); //mostrar el menú principal.
-        int opcionJuego = scanner.nextInt(); //lee la opcion del juego.
 
-        if(opcionJuego == 1){
-            this.juegoActual = 1;//referencia CuatroEnLinea.
-            System.out.println("Cargando partida Cuatro En Linea.... \n");
-        }else if(opcionJuego == 2 ){
-            this.juegoActual = 2;//referencia TicTacToe.
-            System.out.println("Cargando partida TicTacToe..... \n");
-        }else{
-            System.out.println("Selección inválida. Intenta de nuevo"); //muestra este mensjae si la opción no se encuentra en el menú.
-            seleccionarJuego(); //solicitar la selección de juego.
+    // Método para seleccionar el juego
+    public void seleccionarJuego() {
+        mostrarMenuPrincipal();
+        int opcionJuego = entrada.nextInt();
+
+        if (opcionJuego == 1) {
+            this.juegoActual = 1;
+            System.out.println("Iniciando partida Cuatro En Línea.... \n");
+        } else if (opcionJuego == 2) {
+            this.juegoActual = 2;
+            System.out.println("Iniciando partida TicTacToe..... \n");
+        } else {
+            System.out.println("Selección no válida. Intenta de nuevo");
+            seleccionarJuego();
         }
     }
-    
-    /*Metodo sin retorno y parametros. 
-     *Procesa la entrada del usuario para realizar movimientos de los jugadores segun el juegoActual.
-     *
-     */
-    public void procesarEntradaUsuario(){
-        int columna = -1; //columna no válida.
-        boolean movimientoExitoso = false; //aun no hay movimiento exitoso.
 
-        //lógica si el juego actual es CuatroEnLinea.
-        if(juegoActual == 1){
-            
-            while(true){
-                System.out.println("Jugador " + cuatroEnLinea.getJugadorActual() + ", es su turno. Seleccione una columna (0-6) " );
-                columna = scanner.nextInt();//cambiar el valor inicial de columna.
-                
-                /*verifica si el movimiento es válido, llama al metodo de la clase CuatroEnLinea.
-                 *que recibe por parametro la columna escogida .
-                 */
-                movimientoExitoso = cuatroEnLinea.hacerMovimiento(columna); 
+    // Procesar la entrada del usuario según el juego actual
+    public void procesarEntradaUsuario() {
+        if (juegoActual == 1) {
+            // Lógica para CuatroEnLinea
+            int columna = -1;
+            boolean movimientoExitoso = false;
 
-                //verifica que el movimiento es exitoso, columna válida y vacía.
-                if(movimientoExitoso){
-                    break;//salir del bucle.
-                }else{
-                    System.out.println("Movimiento inválido. Intenta de nuevo. \n"); //si la columna no es valida y no está vacía.
+            while (true) {
+                System.out.println("Jugador " + cuatroEnLinea.getJugadorActual() + ", es su turno. Seleccione una columna (0-6): ");
+                columna = entrada.nextInt();
+
+                movimientoExitoso = cuatroEnLinea.hacerMovimiento(columna);
+                if (movimientoExitoso) {
+                    break;
+                } else {
+                    System.out.println("Movimiento inválido. Intenta de nuevo.\n");
                 }
-                
-            }    
-        }
-    }
-    
-    /*Metodo sin parametros y retorno.
-     *Contiene la logica para el flujo del juego, alternar turnos y mostrar el tablero actual en cada movimiento.
-     *Llama a metodos de la clase CuatroEnLinea y de JuegoControlador, para ejecutar el juego seleccionado.
-     */
-    public void jugar(){
-        //Lógica si el juegoActual es CuatroEnLinea.
-        if(juegoActual == 1){ 
-            //Bucle infinito. Sale hasta que se cumpla alguno de los eventos.
-            while(true){ 
-                cuatroEnLinea.mostrarTablero(); //Llama al metodo de la clase CuatroEnLinea para mostrar el tablero actual.
-                procesarEntradaUsuario(); //Llama al metodo, para solicitar movimiento. 
+            }
+        } else if (juegoActual == 2) {
+            // Lógica para TicTacToe
+            int fila, columna;
+            boolean movimientoExitoso = false;
 
-                //verifica si hay empate o ganador después de cada movimiento.
-                if(cuatroEnLinea.esJuegoTerminado()){
-                    cuatroEnLinea.mostrarTablero();//muestra el tablero actual en cada movimiento.
-                    
-                    //evalua si hay un ganador, llama al metodo de la clase CuatroEnLinea.
-                    if(cuatroEnLinea.esGanador()){ 
-                        System.out.println("¡Ha terminado el juego!. El ganador es el jugador " + cuatroEnLinea.getJugadorActual()); //
-                    } else{
-                        System.out.println("¡El juego ha terminado!. Es un empate");
-                    }  
-                    break; //salir del bucle si alguien gana o hay empate.
-                }    
-                cuatroEnLinea.cambiarJugador();//alternar los turnos.
+            while (true) {
+                System.out.println("Jugador " + ticTacToe.getJugadorActual() + ", ingrese la fila (1-3): ");
+                fila = entrada.nextInt() - 1;
+                System.out.println("Ingrese la columna (1-3): ");
+                columna = entrada.nextInt() - 1;
 
+                movimientoExitoso = ticTacToe.hacerMovimiento(fila, columna);
+                if (movimientoExitoso) {
+                    break;
+                }
             }
         }
-        //falta agregar logica para verificar si se quiere jugar de nuevo o cambiar de juego
-        //falta agregar logica para juego tictactoe
     }
 
-    
-    
+    // Método para ejecutar el juego seleccionado
+    public void jugar() {
+        if (juegoActual == 1) {
+            while (true) {
+                cuatroEnLinea.mostrarTablero();
+                procesarEntradaUsuario();
+
+                if (cuatroEnLinea.esJuegoTerminado()) {
+                    cuatroEnLinea.mostrarTablero();
+                    if (cuatroEnLinea.esGanador()) {
+                        System.out.println("¡Ha terminado el juego! El ganador es el jugador " + cuatroEnLinea.getJugadorActual());
+                    } else {
+                        System.out.println("¡El juego ha terminado en empate!");
+                    }
+                    break;
+                }
+                cuatroEnLinea.cambiarJugador();
+            }
+        } else if (juegoActual == 2) {
+            ticTacToe.iniciarJuego();
+            while (!ticTacToe.esJuegoTerminado()) {
+                ticTacToe.mostrarTablero();
+                procesarEntradaUsuario();
+
+                if (ticTacToe.esGanador()) {
+                    ticTacToe.mostrarTablero();
+                    System.out.println("¡Felicidades! El jugador " + ticTacToe.getJugadorActual() + " ha ganado.");
+                    break;
+                } else if (ticTacToe.esEmpate()) {
+                    ticTacToe.mostrarTablero();
+                    System.out.println("El juego ha terminado en empate.");
+                    break;
+                }
+                ticTacToe.cambiarJugador();
+            }
+        }
+
+        // Preguntar si desea jugar de nuevo o cambiar de juego
+        System.out.println("¿Desea jugar de nuevo o cambiar de juego? (1 = Jugar de nuevo, 2 = Cambiar de juego, 3 = Salir)");
+        int respuesta = entrada.nextInt();
+
+        if (respuesta == 1) {
+            jugar(); // Repetir el mismo juego
+        } else if (respuesta == 2) {
+            seleccionarJuego();
+            jugar(); // Cambiar de juego y empezar de nuevo
+        } else {
+            System.out.println("Gracias por jugar. ¡Hasta la próxima!");
+        }
+    }
 }
