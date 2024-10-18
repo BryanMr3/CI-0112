@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class JuegoControlador {
-    private Scanner entrada;
-    private CuatroEnLinea cuatroEnLinea;
-    private TicTacToe ticTacToe;
-    private int juegoActual;
+    private Scanner entrada; //Atributo global para entrada de usuario
+    private CuatroEnLinea cuatroEnLinea; //Instancia clase CuatroEnLinea
+    private TicTacToe ticTacToe; // Instancia clase TicTacToe
+    private int juegoActual; //Referencia a CuatroEnLinea y TicTacToe
 
     // Constructor
     public JuegoControlador() {
@@ -39,7 +39,11 @@ public class JuegoControlador {
         System.out.println("2. TicTacToe");
     }
 
-    // Método para seleccionar el juego
+    /*Método sin retorno y parámetros  
+     Llama al método mostrarMenuPrincipal y procesa la entrada, para que el usuario seleccione un juego
+     Según la seleccion del juego, se asigna el valor a la variable que referencia a alguno de los dos juegos.
+     Si no selecciona un juego del menú, mostrará el mensaje del condicional "else" y reinicia la solicitud del juego
+     */
     public void seleccionarJuego() {
         mostrarMenuPrincipal();
         int opcionJuego = entrada.nextInt();
@@ -56,7 +60,9 @@ public class JuegoControlador {
         }
     }
 
-    // Procesar la entrada del usuario según el juego actual
+    /*Método sin retorno y parámetros. 
+     Procesa la entrada del usuario para realizar movimientos de los jugadores segun el juegoActual.
+     */
     public void procesarEntradaUsuario() {
         if (juegoActual == 1) {
             // Lógica para CuatroEnLinea
@@ -93,7 +99,10 @@ public class JuegoControlador {
         }
     }
 
-    // Método para ejecutar el juego seleccionado
+    /*Metodo sin parametros y retorno.
+     Contiene la logica para el flujo del juego, alternar turnos y mostrar el tablero actual en cada movimiento.
+     Llama a metodos de la clase CuatroEnLinea y de JuegoControlador, para ejecutar el juego seleccionado.
+     */
     public void jugar() {
         if (juegoActual == 1) {
             while (true) {
