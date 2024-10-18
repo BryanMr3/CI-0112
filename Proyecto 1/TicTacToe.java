@@ -10,7 +10,7 @@ public class TicTacToe {
         iniciarJuego();
     }
     
-    //getters y setters 
+    //Getters y setters 
     public static char getJugadorActual(){
         return jugadorActual; 
     }
@@ -26,7 +26,7 @@ public class TicTacToe {
         jugadorActual = 'X'; // Comienza el jugador 'X'
     }
 
-    //boolean para hacer que otros métodos sean más directos
+    //Boolean para hacer que otros métodos sean más directos
     public boolean hacerMovimiento(int fila, int columna) {
         //Verifica si se sale de los límites superiores e inferiores, también si el espacio seleccionado está vacío
         if (fila >= 0 && fila < 3 && columna >= 0 && columna < 3 && tablero[fila][columna] == '/') {
@@ -57,7 +57,7 @@ public class TicTacToe {
     public boolean esGanador() {
         // Verificar filas y columnas
         for (int i = 0; i < 3; i++) {
-            // recorre todas las filas con las diiferentes opciones de columna y viveversa
+            // Recorre todas las filas con las diferentes opciones de columna y viveversa
             if ((tablero[i][0] == jugadorActual && tablero[i][1] == jugadorActual && tablero[i][2] == jugadorActual) ||
                 (tablero[0][i] == jugadorActual && tablero[1][i] == jugadorActual && tablero[2][i] == jugadorActual)) {
                 return true;
@@ -76,7 +76,7 @@ public class TicTacToe {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (tablero[i][j] == '/') {
-                    return false; // Si hay una celda vacía, no hay empate
+                    return false; // Si hay por lo menos una celda vacía, no puede haber empate porque se puede seguir jugando
                 }
             }
         }
