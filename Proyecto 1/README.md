@@ -15,7 +15,7 @@ Instalación
 Para ejecutar el proyecto, necesitas tener instalado Java Development Kit (JDK). 
 Puedes clonar el repositorio y compilar los archivos .java utilizando el siguiente comando:
 git clone https://github.com/BryanMr3/CI-0112.git
-cd <nombre del directorio>
+cd CI-0112/Proyecto 1
 javac *.java
 
 
@@ -41,7 +41,7 @@ Repetir el Juego: Después de cada partida, puedes optar por jugar de nuevo.
 
 Reglas Comunes
 
-Si seleccionas una casilla o columna ocupada, se te notificará y deberás elegir otra.
+Si seleccionar una casilla o columna ocupada, se te notificará y deberás elegir otra.
 Al final de cada partida, se mostrará un mensaje indicando el ganador o si hubo un empate.
 
 
