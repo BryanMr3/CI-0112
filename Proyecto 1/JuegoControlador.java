@@ -1,4 +1,8 @@
 import java.util.Scanner;
+/**
+ *Esta clase contiene los métodos y atributos que dan la estructura del juego Cuatro En Linea. 
+ *Los métodos permiten crear un tablero, realizar y mostrar movimientos, verificar estados del juego.  
+ */
 
 public class JuegoControlador {
     private Scanner entrada; //Atributo global para entrada de usuario
@@ -8,8 +12,8 @@ public class JuegoControlador {
 
     // Constructor que inicializa los atributos
     public JuegoControlador() {
-        this.cuatroEnLinea = new CuatroEnLinea();
-        this.ticTacToe = new TicTacToe();
+        this.cuatroEnLinea = null; //palabra reservada, indica que el objeto está "sin objeto"
+        this.ticTacToe = null;
         this.juegoActual = 0;
         this.entrada = new Scanner(System.in);
     }
@@ -23,6 +27,10 @@ public class JuegoControlador {
         this.ticTacToe = ticTacToe;
     }
 
+    public void setJuegoActual(int juegoActual){
+        this.juegoActual = juegoActual;
+    }
+    
     public CuatroEnLinea getCuatroEnLinea() {
         return cuatroEnLinea;
     }
@@ -31,6 +39,10 @@ public class JuegoControlador {
         return ticTacToe;
     }
 
+    public int getJuegoActual(){
+        return juegoActual;
+    }
+    
     // Método para mostrar el menú principal, no parametros ni retorno
     public void mostrarMenuPrincipal() {
         System.out.println("============MENÚ PRINCIPAL============");
@@ -39,30 +51,32 @@ public class JuegoControlador {
         System.out.println("2. TicTacToe");
     }
 
-    /*Método sin retorno y parámetros  
+    /**
+     *Método sin retorno y parámetros  
      *Llama al método mostrarMenuPrincipal y procesa la entrada, para que el usuario seleccione un juego
      *Según la seleccion del juego, se asigna el valor a la variable que referencia a alguno de los dos juegos.
      *Si no selecciona un juego del menú, mostrará el mensaje del condicional "else" y reinicia la solicitud del juego
      */
     public void seleccionarJuego() {
         mostrarMenuPrincipal();
-        int opcionJuego = entrada.nextInt();
+        juegoActual= entrada.nextInt();
         
         //condicional que permite navegar entre juegos
-        if (opcionJuego == 1) {
-            this.juegoActual = 1;//referencia CuatroEnLinea
+        if (juegoActual == 1) {
             System.out.println("Iniciando partida Cuatro En Línea.... \n");
-        } else if (opcionJuego == 2) {
-            this.juegoActual = 2;//referancia tictatoe
+            this.cuatroEnLinea = new CuatroEnLinea(); //se crea el objeto en el atributo de referencia
+        } else if (juegoActual == 2) {
             System.out.println("Iniciando partida TicTacToe..... \n");
+            this.ticTacToe = new TicTacToe();// se crea un objeto en el atributo de referencia
         } else {
             System.out.println("Selección no válida. Intenta de nuevo");
             seleccionarJuego();//solicita la seleccion de juego
         }
     }
 
-    /*Método sin retorno y parámetros. 
-     Procesa la entrada del usuario para realizar movimientos de los jugadores segun el juegoActual.
+    /**
+     * Método sin retorno y parámetros. 
+     * Procesa la entrada del usuario para realizar movimientos de los jugadores segun el juegoActual.
      */
     public void procesarEntradaUsuario() {
         if (juegoActual == 1) {
@@ -103,13 +117,19 @@ public class JuegoControlador {
         }
     }
 
-    /*Metodo sin parametros y retorno.
+    /**
+     *Metodo sin parametros y retorno.
      *Contiene la logica para el flujo del juego, alternar turnos y mostrar el tablero actual en cada movimiento.
      *Llama a metodos de la clase CuatroEnLinea y de JuegoControlador, para ejecutar el juego seleccionado.
      */
     public void jugar() {
         //Lógica si el juegoActual es CuatroEnLinea.(if) y para TicTacToe (else)
         if (juegoActual == 1) {
+            //si la variable no tiene un objeto, se crea una nueva instancia(permite resetear el juego)
+            if(cuatroEnLinea == null){
+                cuatroEnLinea = new CuatroEnLinea();
+            }
+            
             while (true) {
                 cuatroEnLinea.mostrarTablero();//Llama al metodo de la clase CuatroEnLinea para mostrar el tablero actual.
                 procesarEntradaUsuario();//Llama al metodo, para solicitar
@@ -151,6 +171,9 @@ public class JuegoControlador {
         int respuesta = entrada.nextInt();
 
         if (respuesta == 1) {
+            if(juegoActual == 1){
+                cuatroEnLinea = new CuatroEnLinea(); //reiniciar
+            }
             jugar(); // Repetir el mismo juego
         } else if (respuesta == 2) {
             seleccionarJuego();
@@ -159,4 +182,5 @@ public class JuegoControlador {
             System.out.println("Gracias por jugar. ¡Hasta la próxima!");
         }
     }
+    
 }

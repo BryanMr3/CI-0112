@@ -1,0 +1,186 @@
+\doxysection{Cuatro\+En\+Linea Class Reference}
+\hypertarget{class_cuatro_en_linea}{}\label{class_cuatro_en_linea}\index{CuatroEnLinea@{CuatroEnLinea}}
+
+
+Esta clase representa el juego Cuatro En Línea, incluyendo métodos y atributos para gestionar el tablero, realizar movimientos y verificar el estado del juego.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cuatro_en_linea_a6a04a7d90c7c717199be8bbc7913f420}{Cuatro\+En\+Linea}} (int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360}{tablero}}, int \mbox{\hyperlink{class_cuatro_en_linea_a414d11afb19bc0e0b6ba575483e5a142}{jugador\+Actual}})
+\item 
+\mbox{\hyperlink{class_cuatro_en_linea_add805396cd49d7442532859283d30570}{Cuatro\+En\+Linea}} ()
+\item 
+void \mbox{\hyperlink{class_cuatro_en_linea_afa17d25418c7e43f74a867ec99218247}{set\+Tablero}} (int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360}{tablero}})
+\item 
+void \mbox{\hyperlink{class_cuatro_en_linea_ac5bbb88723b1f9e4f49dae485f7927a4}{set\+Jugador\+Actual}} (int \mbox{\hyperlink{class_cuatro_en_linea_a414d11afb19bc0e0b6ba575483e5a142}{jugador\+Actual}})
+\item 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cuatro_en_linea_aad47763cf224e0050c630c49b9381dc8}{get\+Tablero}} ()
+\item 
+int \mbox{\hyperlink{class_cuatro_en_linea_a92a9f1790bd1cd83fca1d40a25455bc6}{get\+Jugador\+Actual}} ()
+\item 
+void \mbox{\hyperlink{class_cuatro_en_linea_accfca0928b588c78f504285827b2036f}{iniciar\+Juego}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa el tablero con 6 filas y 7 columnas y establece el jugador actual a 1. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_cuatro_en_linea_afa1544fe82a4b26b6964debdba154474}{hacer\+Movimiento}} (int columna)
+\begin{DoxyCompactList}\small\item\em Método booleano, recibe un parámetro de tipo entero que hace referencia al índice de la columna. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cuatro_en_linea_a5f87b2801bb9bc3d1c1989a319c60648}{mostrar\+Tablero}} ()
+\begin{DoxyCompactList}\small\item\em Método sin parámetros, ni retorno. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_cuatro_en_linea_a6264b88217964cd4a40c173538ad6ab8}{es\+Juego\+Terminado}} ()
+\begin{DoxyCompactList}\small\item\em Método tipo booleano,sin parámetros y con retorno. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_cuatro_en_linea_a3fd6476787fb3a15f43568b237353ddc}{es\+Ganador}} ()
+\begin{DoxyCompactList}\small\item\em Método booleano,sin parámetros. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_cuatro_en_linea_affc1e30b638a2d93087a99990485076f}{es\+Empate}} ()
+\begin{DoxyCompactList}\small\item\em Metodo booleano, sin parametros Verifica si el juego es empate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cuatro_en_linea_a75b5dde09ad79c058fd7b74ff6dbeaea}{cambiar\+Jugador}} ()
+\begin{DoxyCompactList}\small\item\em Método sin retorno y parámetros. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360}{tablero}}
+\item 
+int \mbox{\hyperlink{class_cuatro_en_linea_a414d11afb19bc0e0b6ba575483e5a142}{jugador\+Actual}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase representa el juego Cuatro En Línea, incluyendo métodos y atributos para gestionar el tablero, realizar movimientos y verificar el estado del juego. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cuatro_en_linea_a6a04a7d90c7c717199be8bbc7913f420}\index{CuatroEnLinea@{CuatroEnLinea}!CuatroEnLinea@{CuatroEnLinea}}
+\index{CuatroEnLinea@{CuatroEnLinea}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{CuatroEnLinea()}{CuatroEnLinea()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a6a04a7d90c7c717199be8bbc7913f420} 
+Cuatro\+En\+Linea.\+Cuatro\+En\+Linea (\begin{DoxyParamCaption}\item[{int}]{tablero}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}, }\item[{int}]{jugador\+Actual}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_cuatro_en_linea_add805396cd49d7442532859283d30570}\index{CuatroEnLinea@{CuatroEnLinea}!CuatroEnLinea@{CuatroEnLinea}}
+\index{CuatroEnLinea@{CuatroEnLinea}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{CuatroEnLinea()}{CuatroEnLinea()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_add805396cd49d7442532859283d30570} 
+Cuatro\+En\+Linea.\+Cuatro\+En\+Linea (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cuatro_en_linea_a75b5dde09ad79c058fd7b74ff6dbeaea}\index{CuatroEnLinea@{CuatroEnLinea}!cambiarJugador@{cambiarJugador}}
+\index{cambiarJugador@{cambiarJugador}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{cambiarJugador()}{cambiarJugador()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a75b5dde09ad79c058fd7b74ff6dbeaea} 
+void Cuatro\+En\+Linea.\+cambiar\+Jugador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método sin retorno y parámetros. 
+
+Alterna al jugador actual con cambio de valor en atributo jugador\+Actual. \Hypertarget{class_cuatro_en_linea_affc1e30b638a2d93087a99990485076f}\index{CuatroEnLinea@{CuatroEnLinea}!esEmpate@{esEmpate}}
+\index{esEmpate@{esEmpate}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{esEmpate()}{esEmpate()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_affc1e30b638a2d93087a99990485076f} 
+boolean Cuatro\+En\+Linea.\+es\+Empate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metodo booleano, sin parametros Verifica si el juego es empate. 
+
+Retorna false si hay espacios disponibles Retorna true si todos los espacios están llenos \Hypertarget{class_cuatro_en_linea_a3fd6476787fb3a15f43568b237353ddc}\index{CuatroEnLinea@{CuatroEnLinea}!esGanador@{esGanador}}
+\index{esGanador@{esGanador}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{esGanador()}{esGanador()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a3fd6476787fb3a15f43568b237353ddc} 
+boolean Cuatro\+En\+Linea.\+es\+Ganador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método booleano,sin parámetros. 
+
+Verifica si hay un ganador después de cada movimiento, evaluando cada escenario posible que representa que algún jugador gana. Retorna true en los casos que se cumplan, indicando que hay ganador Retorna false si ningun caso se cumple Bucle que verifica si hay ganador en vertical.. Evalúa si hay 4 fichas consecutivas en vertical Bucle que recorre filas(i), se limita el indice "{}i"{} a (tablero.\+length -\/ 3) para asegurar evaluar en 4 espacios dentro de límites.
+
+Verificar si hay ganador en diagonal de izquierda a derecha (). Se limita indice "{}i"{} y "{}j"{} a (tablero.\+length-\/3) para evaluar en 4 espacios consecutivos dentro de los límites
+
+Lógica para verificar si hay un mismo valor de jugador. Acceder a posiciones en diagonal de derecha a izquierda
+
+Verificar ganador en diagonal de izquierda a derecha(/). Limita indice "{}i"{} a comenzar en 3 para evitar un desbordamiento de índice\Hypertarget{class_cuatro_en_linea_a6264b88217964cd4a40c173538ad6ab8}\index{CuatroEnLinea@{CuatroEnLinea}!esJuegoTerminado@{esJuegoTerminado}}
+\index{esJuegoTerminado@{esJuegoTerminado}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{esJuegoTerminado()}{esJuegoTerminado()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a6264b88217964cd4a40c173538ad6ab8} 
+boolean Cuatro\+En\+Linea.\+es\+Juego\+Terminado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método tipo booleano,sin parámetros y con retorno. 
+
+Verifica si el juego termina. Retorna true si hay un empate o hay un ganador Retorna false si hay ganador y empate, el juego continúa. \Hypertarget{class_cuatro_en_linea_a92a9f1790bd1cd83fca1d40a25455bc6}\index{CuatroEnLinea@{CuatroEnLinea}!getJugadorActual@{getJugadorActual}}
+\index{getJugadorActual@{getJugadorActual}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{getJugadorActual()}{getJugadorActual()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a92a9f1790bd1cd83fca1d40a25455bc6} 
+int Cuatro\+En\+Linea.\+get\+Jugador\+Actual (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_cuatro_en_linea_aad47763cf224e0050c630c49b9381dc8}\index{CuatroEnLinea@{CuatroEnLinea}!getTablero@{getTablero}}
+\index{getTablero@{getTablero}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{getTablero()}{getTablero()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_aad47763cf224e0050c630c49b9381dc8} 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Cuatro\+En\+Linea.\+get\+Tablero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_cuatro_en_linea_afa1544fe82a4b26b6964debdba154474}\index{CuatroEnLinea@{CuatroEnLinea}!hacerMovimiento@{hacerMovimiento}}
+\index{hacerMovimiento@{hacerMovimiento}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{hacerMovimiento()}{hacerMovimiento()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_afa1544fe82a4b26b6964debdba154474} 
+boolean Cuatro\+En\+Linea.\+hacer\+Movimiento (\begin{DoxyParamCaption}\item[{int}]{columna}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método booleano, recibe un parámetro de tipo entero que hace referencia al índice de la columna. 
+
+Evalua si la columna es válida para realizar el movimiento y llena la columna con el valor que corresponde a jugador\+Actual Retorna verdadero si se realiza el movimiento. Retorna false si no hay espacio en la columna o si está fuera del rango de columnas ~\newline
+ \Hypertarget{class_cuatro_en_linea_accfca0928b588c78f504285827b2036f}\index{CuatroEnLinea@{CuatroEnLinea}!iniciarJuego@{iniciarJuego}}
+\index{iniciarJuego@{iniciarJuego}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{iniciarJuego()}{iniciarJuego()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_accfca0928b588c78f504285827b2036f} 
+void Cuatro\+En\+Linea.\+iniciar\+Juego (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa el tablero con 6 filas y 7 columnas y establece el jugador actual a 1. 
+
+\Hypertarget{class_cuatro_en_linea_a5f87b2801bb9bc3d1c1989a319c60648}\index{CuatroEnLinea@{CuatroEnLinea}!mostrarTablero@{mostrarTablero}}
+\index{mostrarTablero@{mostrarTablero}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{mostrarTablero()}{mostrarTablero()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a5f87b2801bb9bc3d1c1989a319c60648} 
+void Cuatro\+En\+Linea.\+mostrar\+Tablero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método sin parámetros, ni retorno. 
+
+Imprime el \doxylink{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360}{tablero(cada fila y columna)}, con dos bucles for que recorren el array array ~\newline
+ \Hypertarget{class_cuatro_en_linea_ac5bbb88723b1f9e4f49dae485f7927a4}\index{CuatroEnLinea@{CuatroEnLinea}!setJugadorActual@{setJugadorActual}}
+\index{setJugadorActual@{setJugadorActual}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{setJugadorActual()}{setJugadorActual()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_ac5bbb88723b1f9e4f49dae485f7927a4} 
+void Cuatro\+En\+Linea.\+set\+Jugador\+Actual (\begin{DoxyParamCaption}\item[{int}]{jugador\+Actual}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_cuatro_en_linea_afa17d25418c7e43f74a867ec99218247}\index{CuatroEnLinea@{CuatroEnLinea}!setTablero@{setTablero}}
+\index{setTablero@{setTablero}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{setTablero()}{setTablero()}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_afa17d25418c7e43f74a867ec99218247} 
+void Cuatro\+En\+Linea.\+set\+Tablero (\begin{DoxyParamCaption}\item[{int}]{tablero}{\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_cuatro_en_linea_a414d11afb19bc0e0b6ba575483e5a142}\index{CuatroEnLinea@{CuatroEnLinea}!jugadorActual@{jugadorActual}}
+\index{jugadorActual@{jugadorActual}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{jugadorActual}{jugadorActual}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a414d11afb19bc0e0b6ba575483e5a142} 
+int Cuatro\+En\+Linea.\+jugador\+Actual\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360}\index{CuatroEnLinea@{CuatroEnLinea}!tablero@{tablero}}
+\index{tablero@{tablero}!CuatroEnLinea@{CuatroEnLinea}}
+\doxysubsubsection{\texorpdfstring{tablero}{tablero}}
+{\footnotesize\ttfamily \label{class_cuatro_en_linea_a8d79a289feedaf91debf796c73a00360} 
+int \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Cuatro\+En\+Linea.\+tablero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cuatro_en_linea_8java}{Cuatro\+En\+Linea.\+java}}\end{DoxyCompactItemize}

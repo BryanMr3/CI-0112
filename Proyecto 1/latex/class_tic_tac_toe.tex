@@ -1,0 +1,144 @@
+\doxysection{Tic\+Tac\+Toe Class Reference}
+\hypertarget{class_tic_tac_toe}{}\label{class_tic_tac_toe}\index{TicTacToe@{TicTacToe}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tic_tac_toe_a416ce299c10ec6b7a4c050aa87b62eb1}{Tic\+Tac\+Toe}} ()
+\item 
+void \mbox{\hyperlink{class_tic_tac_toe_a7c26ae0c8403e4581fdb60832c76b62f}{iniciar\+Juego}} ()
+\begin{DoxyCompactList}\small\item\em Método que inicializa el tablero y establece el jugador actual. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_tic_tac_toe_a47a95cf9a4b917fd7500dd91a99c7e11}{hacer\+Movimiento}} (int fila, int columna)
+\begin{DoxyCompactList}\small\item\em Boolean para hacer que otros métodos sean más directos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tic_tac_toe_ac9abb8c4a54c92f5270c7292299878da}{mostrar\+Tablero}} ()
+\begin{DoxyCompactList}\small\item\em Metodo que recorre el tablero para imprimirlo Itera sobre cada casilla del tablero, muestra el contenido en consola. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_tic_tac_toe_afe16c61cccdc9852959867bfc0546a8e}{es\+Juego\+Terminado}} ()
+\begin{DoxyCompactList}\small\item\em Método que verifica si el juego ha terminado Este método evalúa si hay un ganador o si se ha producido un empate Si alguno de las condiciones es retorna verdadera, el juego ha terminado Retorna true si hay un ganador o si el juego ha terminado en empate Retorna false si el juego continúa. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_tic_tac_toe_a08d7ae4699ec9a5771a07336e60c05c3}{es\+Ganador}} ()
+\begin{DoxyCompactList}\small\item\em Método que verifica si hay un ganador en el juego Este método evalua todas las filas y columnas del tablero para definir si el jugador actual consigue conectar 4 "{}fichas"{} en diferente dirección. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{class_tic_tac_toe_a485fac0d7a44d1eb27e6e4beeeb5a625}{es\+Empate}} ()
+\begin{DoxyCompactList}\small\item\em Metodo para verificar si luego de un movimiento, el juego es un empate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tic_tac_toe_a5160a336c6d07673df2dddb0e7317dd8}{cambiar\+Jugador}} ()
+\begin{DoxyCompactList}\small\item\em Metodo que permite cambiar el jugador actual, cada movimiento realizado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{class_tic_tac_toe_a37c4813025d13a4c110dc03997189cd1}{get\+Jugador\+Actual}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_tic_tac_toe_a6408e8880f167f8c84d67cd2629686c3}{tablero}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{class_tic_tac_toe_a6297ab69f7846e885e9ce3a3b3c0da22}{jugador\+Actual}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tic_tac_toe_a416ce299c10ec6b7a4c050aa87b62eb1}\index{TicTacToe@{TicTacToe}!TicTacToe@{TicTacToe}}
+\index{TicTacToe@{TicTacToe}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{TicTacToe()}{TicTacToe()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a416ce299c10ec6b7a4c050aa87b62eb1} 
+Tic\+Tac\+Toe.\+Tic\+Tac\+Toe (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tic_tac_toe_a5160a336c6d07673df2dddb0e7317dd8}\index{TicTacToe@{TicTacToe}!cambiarJugador@{cambiarJugador}}
+\index{cambiarJugador@{cambiarJugador}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{cambiarJugador()}{cambiarJugador()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a5160a336c6d07673df2dddb0e7317dd8} 
+void Tic\+Tac\+Toe.\+cambiar\+Jugador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metodo que permite cambiar el jugador actual, cada movimiento realizado. 
+
+\Hypertarget{class_tic_tac_toe_a485fac0d7a44d1eb27e6e4beeeb5a625}\index{TicTacToe@{TicTacToe}!esEmpate@{esEmpate}}
+\index{esEmpate@{esEmpate}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{esEmpate()}{esEmpate()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a485fac0d7a44d1eb27e6e4beeeb5a625} 
+boolean Tic\+Tac\+Toe.\+es\+Empate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metodo para verificar si luego de un movimiento, el juego es un empate. 
+
+\Hypertarget{class_tic_tac_toe_a08d7ae4699ec9a5771a07336e60c05c3}\index{TicTacToe@{TicTacToe}!esGanador@{esGanador}}
+\index{esGanador@{esGanador}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{esGanador()}{esGanador()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a08d7ae4699ec9a5771a07336e60c05c3} 
+boolean Tic\+Tac\+Toe.\+es\+Ganador (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método que verifica si hay un ganador en el juego Este método evalua todas las filas y columnas del tablero para definir si el jugador actual consigue conectar 4 "{}fichas"{} en diferente dirección. 
+
+\Hypertarget{class_tic_tac_toe_afe16c61cccdc9852959867bfc0546a8e}\index{TicTacToe@{TicTacToe}!esJuegoTerminado@{esJuegoTerminado}}
+\index{esJuegoTerminado@{esJuegoTerminado}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{esJuegoTerminado()}{esJuegoTerminado()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_afe16c61cccdc9852959867bfc0546a8e} 
+boolean Tic\+Tac\+Toe.\+es\+Juego\+Terminado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método que verifica si el juego ha terminado Este método evalúa si hay un ganador o si se ha producido un empate Si alguno de las condiciones es retorna verdadera, el juego ha terminado Retorna true si hay un ganador o si el juego ha terminado en empate Retorna false si el juego continúa. 
+
+\Hypertarget{class_tic_tac_toe_a37c4813025d13a4c110dc03997189cd1}\index{TicTacToe@{TicTacToe}!getJugadorActual@{getJugadorActual}}
+\index{getJugadorActual@{getJugadorActual}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{getJugadorActual()}{getJugadorActual()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a37c4813025d13a4c110dc03997189cd1} 
+static char Tic\+Tac\+Toe.\+get\+Jugador\+Actual (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_tic_tac_toe_a47a95cf9a4b917fd7500dd91a99c7e11}\index{TicTacToe@{TicTacToe}!hacerMovimiento@{hacerMovimiento}}
+\index{hacerMovimiento@{hacerMovimiento}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{hacerMovimiento()}{hacerMovimiento()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a47a95cf9a4b917fd7500dd91a99c7e11} 
+boolean Tic\+Tac\+Toe.\+hacer\+Movimiento (\begin{DoxyParamCaption}\item[{int}]{fila}{, }\item[{int}]{columna}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Boolean para hacer que otros métodos sean más directos. 
+
+\Hypertarget{class_tic_tac_toe_a7c26ae0c8403e4581fdb60832c76b62f}\index{TicTacToe@{TicTacToe}!iniciarJuego@{iniciarJuego}}
+\index{iniciarJuego@{iniciarJuego}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{iniciarJuego()}{iniciarJuego()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a7c26ae0c8403e4581fdb60832c76b62f} 
+void Tic\+Tac\+Toe.\+iniciar\+Juego (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método que inicializa el tablero y establece el jugador actual. 
+
+Este método crea un nuevo tablero de 3x3 y lo llena con el carácter \textquotesingle{}/\textquotesingle{} para indicar que todas las celdas están vacías. Además, establece al jugador actual como \textquotesingle{}X\textquotesingle{}, indicando que es su turno para comenzar el juego. \Hypertarget{class_tic_tac_toe_ac9abb8c4a54c92f5270c7292299878da}\index{TicTacToe@{TicTacToe}!mostrarTablero@{mostrarTablero}}
+\index{mostrarTablero@{mostrarTablero}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{mostrarTablero()}{mostrarTablero()}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_ac9abb8c4a54c92f5270c7292299878da} 
+void Tic\+Tac\+Toe.\+mostrar\+Tablero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metodo que recorre el tablero para imprimirlo Itera sobre cada casilla del tablero, muestra el contenido en consola. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tic_tac_toe_a6297ab69f7846e885e9ce3a3b3c0da22}\index{TicTacToe@{TicTacToe}!jugadorActual@{jugadorActual}}
+\index{jugadorActual@{jugadorActual}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{jugadorActual}{jugadorActual}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a6297ab69f7846e885e9ce3a3b3c0da22} 
+char Tic\+Tac\+Toe.\+jugador\+Actual\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_tic_tac_toe_a6408e8880f167f8c84d67cd2629686c3}\index{TicTacToe@{TicTacToe}!tablero@{tablero}}
+\index{tablero@{tablero}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{tablero}{tablero}}
+{\footnotesize\ttfamily \label{class_tic_tac_toe_a6408e8880f167f8c84d67cd2629686c3} 
+char \mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} Tic\+Tac\+Toe.\+tablero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_tic_tac_toe_8java}{Tic\+Tac\+Toe.\+java}}\end{DoxyCompactItemize}
