@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Tabla
+comment0.text=Esta\ clase\ contiene\ los\ atributos\ y\ metodos\ sobre\ la\ dimension,\ precio\ de\ la\ tabla\r\n
 comment1.params=ancho\ largo\ precio
 comment1.target=Tabla(double,\ double,\ double)
 comment10.params=

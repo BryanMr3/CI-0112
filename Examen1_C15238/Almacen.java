@@ -1,6 +1,8 @@
 
 
 
+/*Esta clase inicializa la tabla estandar y almacena las tablas por su tamaño
+ */
 public class Almacen
 {
     private Tabla[] tablas;
@@ -40,7 +42,6 @@ public class Almacen
     public void ordenarTablas(){
         
     }
-    
     
     
     //metodo para agregar tablas en el array tablas
