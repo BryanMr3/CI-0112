@@ -1,7 +1,7 @@
 public class Queue{
 
-    private Nodo first;
-    private Nodo last;
+    private Node first;
+    private Node last;
     private int large;
 
     public Queue(){
