@@ -65,12 +65,24 @@ public class Deque{
             node1.setAfter(null); //no hay nodo previo a este
         }else{
             node1.setAfter(this.first); //enlazar nodo nuevo con nodo viejo por derecha
-             
-            if(this.first!= null){
-                this.first.setBefore(node1); //enlazar nodo viejo con nodo nuevo por izquierda  
-            }
+            this.first.setBefore(node1); //enlazar nodo viejo con nodo nuevo por izquierda  
             this.first = node1;//Asignar el nuevo nodo como primero
             
+        }
+    }
+
+    public void pushBack(int data){
+        Node node1 = new Node(data);
+
+        if(isEmpty()){
+            this.first = node1; //es primer elemento de la cola
+            this.last = node1; //es último elemento de la cola
+            node1.setBefore(null); //no hay nodo anterior a este
+            node1.setAfter(null); //no hay nodo previo a este
+        }else{
+            node1.setBefore(this.last); //enlazar nodo nuevo con nodo viejo por izquierda 
+            this.last.setAfter(node1); //enlazar nodo viejo con nodo nuevo por derecha
+            this.last = node1;//Asignar el nuevo nodo como primero
         }
     }
 
@@ -87,10 +99,17 @@ public class Deque{
         if (isEmpty()) {
             System.out.println("no hay elementos en la cola");
         }else{
+            //Mientras haya un nodo con valor diferente de nulo se ejecuta el bucle
             while (currentNode != null) {
-                System.out.print(" "+ currentNode.getData()  );//imprimir nodo actual
-                currentNode = currentNode.getAfter();//actualizar nodo actual    
+                System.out.print(currentNode.getData());//imprimir nodo actual
+               
+                if(currentNode.getAfter() != null){
+                    System.out.print(" <-> "); //enlace visual entre nodos, no aparece en enlace null
+                }
+
+                currentNode = currentNode.getAfter();//actualizar a nodo siguiente
             }
+            //siguiente paso debe ser el manejo de excepciones, asi como los metodos de eliminar nodo
         }
     }
 
