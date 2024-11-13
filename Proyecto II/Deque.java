@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /** 
  * Esta clase contiene métodos y la estructura a implementar para la cola doble
@@ -9,13 +8,13 @@ public class Deque{
 
     private Node first; //referencia al primer elemento de la cola
     private Node last; //referencia al último elemento de la cola
-    private int large;
+    
     
     //Metodo constructor
     public Deque(){
         this.first = null;
         this.last = null;
-        this.large = 0;
+        
     }
 
     //setters
@@ -65,41 +64,40 @@ public class Deque{
             node1.setBefore(null); //no hay nodo anterior a este
             node1.setAfter(null); //no hay nodo previo a este
         }else{
-            Node node2 = new Node(data); 
-            node2.setBefore(null); //no hay un nodo previo al nuevo nodo
-            node2.setAfter(node1); //se enlaza los nodos, el nodo posterior del nuevo, es el nodo que ya existía.
-            node1.setBefore(node2); //actualiza el nodo previo del nodo antiguo, lo enlaza con el nuevo nodo
-            this.first = node2; //actualiza el nuevo primer nodo de la cola 
+            node1.setAfter(this.first); //enlazar nodo nuevo con nodo viejo por derecha
+             
+            if(this.first!= null){
+                this.first.setBefore(node1); //enlazar nodo viejo con nodo nuevo por izquierda  
+            }
+            this.first = node1;//Asignar el nuevo nodo como primero
+            
         }
     }
 
+    /**
+     * Método para imprimir la cola actual.
+     */
     public void printDeque(){
         Node currentNode = this.first; //nodo actual es el nodo contenido en atributo first
         
+        /**
+         *Verifica si la cola está vacía, muestra que no hay elementos en la cola si está vacia
+         *Si no, imprime los nodos actuales, asi como actualizar el nodo anterior que estén enlazados
+         */
         if (isEmpty()) {
             System.out.println("no hay elementos en la cola");
         }else{
             while (currentNode != null) {
-                System.out.println(currentNode.getData());
-                currentNode = currentNode.getAfter();
-                
+                System.out.print(" "+ currentNode.getData()  );//imprimir nodo actual
+                currentNode = currentNode.getAfter();//actualizar nodo actual    
             }
         }
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Deque colaDoble = new Deque(); 
+    
         
-        while (true) {
-            System.out.println("inserte el elemento de la cola");
-            int data = scanner.nextInt();
-            colaDoble.pushFront(data);
-            System.out.println("cola actual:");
-            colaDoble.printDeque();
-        }
-         
-    }
+    
+    
     
 
 }
