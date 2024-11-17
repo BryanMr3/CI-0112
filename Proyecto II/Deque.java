@@ -86,6 +86,24 @@ public class Deque{
         }
     }
 
+     /*Método para buscar elementos en el Queue*/
+
+    public boolean searchDuque(int value){
+        
+        Node search1 = this.first;
+
+        while (search1 != null) {
+
+            if (search1.getData() == value) {
+                return true;
+            }
+
+            search1 = search1.getAfter();
+        }
+
+        return false;
+    }
+
     /**
      * Método para imprimir la cola actual.
      */
