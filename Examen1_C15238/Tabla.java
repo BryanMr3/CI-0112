@@ -1,5 +1,6 @@
 
-//
+/*Esta clase contiene los atributos y metodos sobre la dimension, precio de la tabla
+ */
 public class Tabla
 {
     private double ancho;
