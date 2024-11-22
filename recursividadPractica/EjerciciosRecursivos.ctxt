@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=EjerciciosRecursivos
+comment0.text=\r\nEsta\ clase\ contiene\ ejercicios\ sobre\ el\ tema\ de\ recursividad.\r\n
+comment1.params=numero
+comment1.target=int\ sumarDigitos(int)
+comment2.params=x\ n
+comment2.target=int\ potencia(int,\ int)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
