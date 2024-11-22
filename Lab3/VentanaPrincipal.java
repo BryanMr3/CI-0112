@@ -1,6 +1,9 @@
 import javax.swing.*; //importar toda la biblioteca de java swing
 import java.io.FileWriter;
 import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class VentanaPrincipal extends JFrame{
     //constructor de la clase
     public VentanaPrincipal(){
@@ -32,7 +35,7 @@ public class VentanaPrincipal extends JFrame{
         
         //Parte 4, crear formulario de entrada de datos
         JPanel panelFormulario = new JPanel();
-        panelFormulario.setLayout(new BoxLayout(panelFormulario, BoxLayout.Y_AXIS));
+        panelFormulario.setLayout(new BoxLayout(panelFormulario, BoxLayout.Y_AXIS));//vertical
         
         JLabel etiquetaNombre = new JLabel("Nombre:");
         JTextField campoNombre = new JTextField(20);//Ingresar texto de una sola línea y agregar 20 columnas de ancho                         
@@ -49,6 +52,7 @@ public class VentanaPrincipal extends JFrame{
         panelFormulario.add(campoEmail);
         panelFormulario.add(etiquetaTelefono);
         panelFormulario.add(campoTelefono);
+        
         add(panelFormulario);
         
         //inicio parte 5, añadir botones y funcionalidad "guardar" a guardar datos
@@ -71,6 +75,14 @@ public class VentanaPrincipal extends JFrame{
         });
         
         panelFormulario.add(botonGuardar);//añade el boton al panel
+        
+        
+        //crear JComboBox y añadir los elementos
+        String[] tiposDeUsuario = {"Cliente","Empleado","Administrador"};
+        JComboBox<String> tiposUsuario = new JComboBox<>(tiposDeUsuario);
+        
+        panelFormulario.add(tiposUsuario);
+        
     }
     
     public static void main(String[] args){
