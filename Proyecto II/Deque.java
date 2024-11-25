@@ -71,6 +71,10 @@ public class Deque{
         }
     }
 
+    /**
+     * Método que agrega un nodo al final de la cola, sin retorno y recibe un parametro de tipo entero.
+     * 
+     */
     public void pushBack(int data){
         Node node1 = new Node(data);
 
@@ -86,6 +90,36 @@ public class Deque{
         }
     }
 
+    public void popFront(){
+        if (!isEmpty()) {
+           if (this.first==this.last) {
+                this.first = null;
+                this.last = null;
+            }else{
+                Node currentFirst = this.first;
+                currentFirst = currentFirst.getAfter();
+                currentFirst.setBefore(null);
+                this.first = currentFirst;
+            } 
+        }       
+        
+    }
+
+    public void popBack(){
+        if (!isEmpty()) {
+            if (this.first == this.last ) {
+                this.first = null;
+                this.last = null;
+            }else{
+                Node currentLast = this.last;
+                currentLast = currentLast.getBefore();
+                currentLast.setAfter(null);
+                this.last = currentLast;
+            }
+        }
+
+    }
+        
      /*Método para buscar elementos en el Queue*/
 
     public boolean searchDuque(int value){
@@ -115,7 +149,7 @@ public class Deque{
          *Si no, imprime los nodos actuales, asi como actualizar el nodo anterior que estén enlazados
          */
         if (isEmpty()) {
-            System.out.println("no hay elementos en la cola");
+            System.out.println("La cola está vacía");
         }else{
             //Mientras haya un nodo con valor diferente de nulo se ejecuta el bucle
             while (currentNode != null) {
@@ -128,6 +162,11 @@ public class Deque{
                 currentNode = currentNode.getAfter();//actualizar a nodo siguiente
             }
             //siguiente paso debe ser el manejo de excepciones, asi como los metodos de eliminar nodo
+
+            //YA TENEMOS LOS METODOS FALTANTES, AHORA VEAMOS MANEJO DE EXCEPCIONES E INTERFAZ GRAFICA
+            //DOCUMENTACION
+            //MEJORAR INTERFAZ INICIAL TAL VEZ
+            //HACER PRUEBAS PARA INTEGRAR COSAS A LA INTERFAZ GRAFICA
         }
     }
 
