@@ -1,10 +1,15 @@
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class MainDeque{
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        MainWindow nueva = new MainWindow();
+        nueva.setVisible(true);//dar visibilidad a la ventana
+        
+        
+        
+        /**Scanner scanner = new Scanner(System.in);
         Deque colaDoble = new Deque(); 
         
         for(int i = 0; i<5; i++){
@@ -59,6 +64,6 @@ public class MainDeque{
             if(colaDoble.searchDuque(missing) == false){
                 System.out.println("El elemento no se encuentra en la cola");
             }
-        }
+        }**/
     }    
 }
