@@ -141,39 +141,27 @@ public class Deque{
     /**
      * Método para imprimir la cola actual.
      */
-    public void printDeque(){
+    public String printDeque(){
         Node currentNode = this.first; //nodo actual es el nodo contenido en atributo first
-        
+        StringBuilder sb = new StringBuilder(); //construir una cadena
         /**
          *Verifica si la cola está vacía, muestra que no hay elementos en la cola si está vacia
          *Si no, imprime los nodos actuales, asi como actualizar el nodo anterior que estén enlazados
          */
         if (isEmpty()) {
-            System.out.println("La cola está vacía");
+            sb.append("La cola está vacía");
         }else{
             //Mientras haya un nodo con valor diferente de nulo se ejecuta el bucle
             while (currentNode != null) {
-                System.out.print(currentNode.getData());//imprimir nodo actual
+                sb.append(currentNode.getData());//imprimir nodo actual
                
                 if(currentNode.getAfter() != null){
-                    System.out.print(" <-> "); //enlace visual entre nodos, no aparece en enlace null
+                    sb.append(" <-> "); //enlace visual entre nodos, no aparece en enlace null
                 }
 
                 currentNode = currentNode.getAfter();//actualizar a nodo siguiente
             }
-            //siguiente paso debe ser el manejo de excepciones, asi como los metodos de eliminar nodo
-
-            //YA TENEMOS LOS METODOS FALTANTES, AHORA VEAMOS MANEJO DE EXCEPCIONES E INTERFAZ GRAFICA
-            //DOCUMENTACION
-            //MEJORAR INTERFAZ INICIAL TAL VEZ
-            //HACER PRUEBAS PARA INTEGRAR COSAS A LA INTERFAZ GRAFICA
         }
+        return sb.toString();
     }
-
-    
-        
-    
-    
-    
-
 }
