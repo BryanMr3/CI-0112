@@ -45,12 +45,12 @@ public class MainWindow extends JFrame {
         JScrollPane scrollPane = new JScrollPane(showDequeArea); //Si la Deque es muy extensa, permite scrolear la cola para ver todos los nodos
 
         //Componentes para solicitar número
-        JLabel addLabel = new JLabel("Ingrese el valor que desea agregar:"); //Etiqueta para solicitar un número para agregar 
+        JLabel addLabel = new JLabel("Ingrese el número entero que desea agregar:"); //Etiqueta para solicitar un número para agregar 
         valueField = new JTextField(20); //Cuadro de texto para agregar el número
 
 
         //Componentes para buscar número
-        JLabel searchLabel = new JLabel("Ingrese el valor que desea buscar"); //Etiqueta para solicitar un número para buscar
+        JLabel searchLabel = new JLabel("Ingrese el número entero que desea buscar"); //Etiqueta para solicitar un número para buscar
         searchField = new JTextField(20); //Cuadro de texto para agregar el número
     
         
@@ -69,34 +69,50 @@ public class MainWindow extends JFrame {
        
         //agregar botones
         JButton searchbButton = new JButton("Buscar");
-         
-        JButton pushFrontButton = new JButton("Encolar al frente"); //botón para encolar al frente un valor.
-                pushFrontButton.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent e){
-                        String text = valueField.getText();//obtener el texto del cuadro de texto   
-                        
-                        try {
-                            int value = Integer.parseInt(text);
-                            deque.pushFront(value);
-                            showDequeArea.setText(deque.printDeque());
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(pushFrontButton, "Esto no es un número entero, ingrese un número entero", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                    }
-                });
-                pushFrontButton.setBounds(158,109,97,25);
+        
+        //botón para encolar al frente un valor.
+        JButton pushFrontButton = new JButton("Encolar al frente"); 
+        pushFrontButton.addActionListener(e -> {
+            String text = valueField.getText();//obtener el texto del cuadro de texto   
+            
+            //Manejo excepcion            
+            try {
+                int valueFront = Integer.parseInt(text); //convertir texto a entero, si es posible
+                deque.pushFront(valueFront); //Encolar al frente, llama al método de Deque
+                showDequeArea.setText(deque.printDeque()); //Muestra el valor encolado en el textArea
+            } catch (Exception ex) { 
+                JOptionPane.showMessageDialog(panelDeque, "Debe ingresar un número entero", "Error al encolar", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        
+        //botón para encolar atrás
+        
+        JButton pushBackButton = new JButton("Encolar al final"); //botón para encolar al final un valor.
+        pushBackButton.addActionListener(e ->{ 
+            String text = valueField.getText();//obtener el texto
+
+            //Manejo de excepción, si el texto puede ser convertido a int continúa el bloque, si no salta a la excepción
+            try {
+                int valueBack = Integer.parseInt(text); 
+
+                deque.pushBack(valueBack); //Encolar atrás, llamado del método pushBack
+                showDequeArea.setText(deque.printDeque()); //Mostrar la cola actualizada con el nodo encolado
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(panelDeque, "Debe ingresar un número entero", "Error al encolar", JOptionPane.ERROR_MESSAGE );
+            } 
+        });
         
 
 
         
-        //AUN NO FUNCIONA BIEN, AL AGREGAR EL NUMERO SE MUEVE TODO(CUADROS DE TEXTO, BOTONES, VERIFICAR ESTE ERROR)
+        
         //VERIFICAR SI EL MANEJO DE EXCEPCIONES ESTA COMPLETO PARA ESTE BOTON
         //EL E DE ACTION LISTENER MUESTRA MENSAJE QUE NO SE ESTÁ USANDO, VERIFICAR EL POR QUÉ
         //VERIFICAR SI NO HACE FALTA ALGO EN EL LA COLA DEQUE QUE SEA NECESARIO PARA AQUI
         //MEJORAR DISEÑO DE PANEL
         
 
-        JButton pushBackButton = new JButton("Encolar al final"); //botón para encolar al final un valor.
+        
         JButton popFrontButton = new JButton("Desencolar al frente"); //botón para desencolar al inicio
         JButton popBackButton = new JButton("Desencolar al final"); //botón para desencolar al final.
         
