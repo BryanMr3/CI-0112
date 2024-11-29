@@ -30,7 +30,6 @@ public class MainWindow extends JFrame {
 
         // Llamado de métodos
         addComponents();
-     
     }
     
     /**
@@ -68,9 +67,25 @@ public class MainWindow extends JFrame {
     
        
         // Agregar botones
-        JButton searchbButton = new JButton("Buscar");
+        JButton searchButton = new JButton("Buscar");
+        searchButton.addActionListener(e -> {
+            String textSearch = searchField.getText();
+            
+            try {
+                int searchValue = Integer.parseInt(textSearch); // Convertir el texto númerico a int
+                if(deque.searchDeque(searchValue)){ // El método evalua si el número se encuentra en la cola
+                    JOptionPane.showMessageDialog(null, "El número " +  searchValue + " se encuentra en la cola"); // El número está en la cola
+                }else{
+                    JOptionPane.showMessageDialog(null, "El número " +  searchValue + " no se encuentra en la cola"); // El número no está en la cola
+                }
+                searchField.setText("");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(panelDeque, "Ingrese el número que desea buscar", "No se puede buscar", JOptionPane.ERROR_MESSAGE ); // La cola está vacía o hay valores ingresados inválidos
+            }
 
-        panelDeque.add(searchbButton); // Añadir el botón al panel
+        });
+
+        panelDeque.add(searchButton); // Añadir el botón al panel
         
         // botón para encolar un frente al nodo
         JButton pushFrontButton = new JButton("Encolar al frente"); 
@@ -82,6 +97,7 @@ public class MainWindow extends JFrame {
                 int valueFront = Integer.parseInt(text); //convertir texto a entero, si es posible
                 deque.pushFront(valueFront); //Encolar al frente, llama al método de Deque
                 showDequeArea.setText(deque.printDeque()); //Muestra el valor encolado en el textArea
+                valueField.setText(""); //Borrar el contenido después de realizar la acción
             } catch (Exception ex) { 
                 JOptionPane.showMessageDialog(panelDeque, "Debe ingresar un número entero", "Error al encolar", JOptionPane.ERROR_MESSAGE);
             }
@@ -91,7 +107,7 @@ public class MainWindow extends JFrame {
         // Botón para encolar un nodo al final de la cola
         JButton pushBackButton = new JButton("Encolar al final"); //botón para encolar al final un valor.
         pushBackButton.addActionListener(e ->{ 
-            String text = valueField.getText();//obtener el texto
+            String text = valueField.getText();// Obtener el texto
 
             // Manejo de excepción, si el texto puede ser convertido a int continúa el bloque, si no salta a la excepción
             try {
@@ -99,6 +115,7 @@ public class MainWindow extends JFrame {
 
                 deque.pushBack(valueBack); //Encolar atrás, llamado del método pushBack
                 showDequeArea.setText(deque.printDeque()); //Mostrar la cola actualizada con el nodo encolado
+                valueField.setText("");
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(panelDeque, "Debe ingresar un número entero", "Error al encolar", JOptionPane.ERROR_MESSAGE );
             } 
@@ -130,14 +147,8 @@ public class MainWindow extends JFrame {
         }); 
         panelDeque.add(popBackButton); // Agregar botón al panel
 
-        
-        
+       
 
-        
-        
-        
-        
-        
         // COSAS POR CORREGIR...
         // EL CODIGO FUNCIONA DE MANERA BASICA, HAY ERRORES QUE AUN NO SE MANEJAN, A PESAR QUE EL PROGRAMA NO SE CAE, NO SON MANEJADOS DE MANERA ESPECIFICA ESOS ERRORES
         // AUN FALTA QUE EL BOTON DE BUSQUEDA FUNCIONE
