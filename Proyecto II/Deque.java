@@ -145,7 +145,7 @@ public class Deque{
          */
         while (search != null) {
             if (search.getData() == value) { 
-                return true;
+                return true; // El número e
             }
             search = search.getAfter(); // Pasa al siguiente nodo(referencia)
         }
@@ -153,30 +153,20 @@ public class Deque{
     }
 
     /**
-     * Método para imprimir la cola actual, retorna una cadena
+     * Método para imprimir la cola actual, retorna una cad
      */
     public String printDeque(){
         Node currentNode = this.first; // nodo actual es el nodo contenido en atributo first
         StringBuilder sb = new StringBuilder(); // construir una cadena
         
-        /**
-         * Verifica si la cola está vacía, muestra que no hay elementos en la cola si está vacia
-         * Si no, imprime los nodos actuales, asi como actualizar el nodo anterior al que que estén enlazados
-         */
-        if (isEmpty()) {
-            sb.append("La cola está vacía");
-        }else{
-            // Mientras haya un nodo con valor diferente de nulo se ejecuta el bucle
-            while (currentNode != null) {
-                sb.append(currentNode.getData());// imprimir nodo actual
+        while (currentNode != null) {
+            sb.append(currentNode.getData());// imprimir nodo actual
                
-                if(currentNode.getAfter() != null){
-                    sb.append("  <->  "); // enlace visual entre nodos, no aparece en enlace null
-                    
-                }   
-                currentNode = currentNode.getAfter();// actualizar a nodo siguiente
+            if(currentNode.getAfter() != null){
+                sb.append("  <->  "); // enlace visual entre nodos, no aparece en enlace null    
+            }   
+            currentNode = currentNode.getAfter();// actualizar a nodo siguiente
             }
-        }
         return sb.toString(); //Retorna la cadena de la cola
     }
 }
