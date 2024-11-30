@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * Esta clase contiene los metodos necesarios para la creación de la interfaz gráfica
  */
-public class MainWindow extends JFrame {
+public class DequeInterface extends JFrame {
     private Deque deque;
     private JPanel panelDeque;
     private JTextArea showDequeArea;
@@ -18,7 +18,7 @@ public class MainWindow extends JFrame {
      * Método constructor, contiene instrucciones sobre la ventana de la interfaz.
      * Hace llamados a métodos que crean componentes de la interfaz
      */
-    public MainWindow(){
+    public DequeInterface(){
         deque = new Deque();
         setTitle("Cola doble");//Titulo de la ventana
         setSize(700, 600); //Tamaño de ventana
@@ -149,15 +149,15 @@ public class MainWindow extends JFrame {
 
        
 
-        // COSAS POR CORREGIR...
-        // EL CODIGO FUNCIONA DE MANERA BASICA, HAY ERRORES QUE AUN NO SE MANEJAN, A PESAR QUE EL PROGRAMA NO SE CAE, NO SON MANEJADOS DE MANERA ESPECIFICA ESOS ERRORES
-        // AUN FALTA QUE EL BOTON DE BUSQUEDA FUNCIONE
-        // DEBERIA AGREGAR UN BOTON PARA BORRAR LA COLA COMPLETA DE UNA VEZ? O MAS BIEN IMPLEMENTARLO COMO: VACIAR TODA LA COLA?
-        // DEBERIA AÑADIR PESTAÑAS PARA CERRAR EL PROGRAMA
-        // DEBERIA ALMACENAR LA COLA EN UN ARCHIVO?
-        // ERRORES QUE AUN SE MANTIENEN: NO MOSTRAR UN MENSAJE SI SE INTENTA BORRAR UN NODO SI LA COLA ESTA VACIA, CUANDO SE AGREGA NODOS CON ESPACIOS Y SÍ HAY UN NUMERO NO SE LOGRA AGREGAR
-        // EL DISEÑO NO ES TAN BUENO, DEBO MEJORARLO. NO SE SI MANEJAR POSICIONES PERSONALIZADAS O COMO, BUSCAR SOBRE FORMAS DE ORDENAR EL DISEÑO DE PANEL
-        // AUN SE MANTIENE LOS MENSAJES DE QUE NO SE USA EL EVENTE E, COMO PUEDO CORREGIR ESO, AFECTA EL PROGRAMA?
+        /**
+         * Cosas que no se pudieron completar...
+         * Manejo de excepciones especificas, no se muestran los mensajes correspondientes a errores como agregar un número y haber ingresado espacios antes de este
+         * No se maneja el error de agregar un número con una extensión larga
+         * No hay un botón para vaciar la cola, se intentó pero solo se logro borrarla visualmente, no desde memoria
+         * El diseño podria mejorar por mucho, no se completó por tiempo
+         * Hay mensajes sobre el ActionListener, que no se usa el e parametro del action listener, no se pudo investigar bien sobre esto
+         * no hay un mensaje para cuando se intenta borrar una cola vacía, pero no se cae el programa
+         */
                 
     }
 
