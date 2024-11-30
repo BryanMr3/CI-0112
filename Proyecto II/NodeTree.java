@@ -1,38 +1,35 @@
-public class NodeTree{
+public class NodeTree {
 
-    public Node rigth;
-    public Node left;
+    public NodeTree right;
+    public NodeTree left;
     public int key;
 
-    public void Node(int key){
-
-        this.rigth = null;
+    // Constructor
+    public NodeTree(int key){
+        this.right = null;
         this.left = null;
         this.key = key;
     }
 
-    //Métodos setter//
-
-    public void setRigth(int data){
-
-        this.right = data;
+    // Setters//
+    public void setRight(NodeTree node){
+        this.right = node;
     }
 
-    public void setLeft(int data){
-        this.left = data;
+    public void setLeft(NodeTree node){
+        this.left = node;
     }
 
-    public void setKey(int data){
-        this.key = data;
+    public void setKey(int key){
+        this.key = key;
     }
 
-    //Métodos getters//
-
-    public Node getRigth(){
-        return rigth;
+    //Getters//
+    public NodeTree getRight(){
+        return right;
     }
 
-    public Node getLeft(){
+    public NodeTree getLeft(){
         return left;
     }
 
